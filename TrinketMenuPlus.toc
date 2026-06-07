@@ -6,8 +6,8 @@
 ## Dependencies: TrinketMenu
 ## OptionalDeps: LibStub, LibDBIcon-1.0, LibDataBroker-1.1
 ## SavedVariables: TrinketMenuPlusDB
-## X-Curse-Project-ID: 0
-## X-Wago-AddonID: 0
+## X-Curse-Project-ID: 1568120
+## X-Wago-ID: RNLkEEGo
 ## X-Website: https://github.com/Nelnamara/trinketmenuplus-dev
 ## X-License: All Rights Reserved
 
