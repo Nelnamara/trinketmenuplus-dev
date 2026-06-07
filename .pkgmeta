@@ -1,0 +1,8 @@
+package-as: TrinketMenuPlus
+
+ignore:
+  - .pkgmeta
+  - .gitignore
+  - .github
+  - README.md
+  - docs

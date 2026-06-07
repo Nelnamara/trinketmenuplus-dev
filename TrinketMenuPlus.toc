@@ -1,9 +1,14 @@
 ## Interface: 120005
 ## Title: TrinketMenu Plus
-## Notes: Adds two configurable spell/macro action boxes alongside TrinketMenu, with built-in Force of Nature aim assist for ground-targeted spells.
+## Notes: Adds two configurable spell/macro action boxes alongside TrinketMenu, with built-in aim assist for ground-targeted spells.
 ## Author: Nelnamara
-## Version: 0.1.0
+## Version: 0.3.0
 ## Dependencies: TrinketMenu
+## OptionalDeps: LibStub, LibDBIcon-1.0, LibDataBroker-1.1
 ## SavedVariables: TrinketMenuPlusDB
+## X-Curse-Project-ID: 0
+## X-Wago-AddonID: 0
+## X-Website: https://github.com/Nelnamara/trinketmenuplus-dev
+## X-License: All Rights Reserved
 
 TrinketMenuPlus.lua
