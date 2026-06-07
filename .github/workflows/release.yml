@@ -4,6 +4,7 @@ on:
   push:
     tags:
       - 'v*'   # triggers on any tag like v0.3.0, v1.0.0, etc.
+  workflow_dispatch:   # allows manual trigger from GitHub Actions tab
 
 jobs:
   release:
@@ -18,6 +19,6 @@ jobs:
       - name: Package and publish
         uses: BigWigsMods/packager@v2
         env:
-          CF_API_KEY:   ${{ secrets.CF_API_KEY }}
+          CF_API_KEY:   ${{ secrets.CURSFORGE_API_KEY }}
           WAGO_API_KEY: ${{ secrets.WAGO_API_KEY }}
           GITHUB_OAUTH: ${{ secrets.GITHUB_TOKEN }}
