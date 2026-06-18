@@ -1,8 +1,9 @@
-## Interface: 120005
+## Interface: 120007
 ## Title: TrinketMenu Plus
 ## Notes: Adds two configurable spell/macro action boxes alongside TrinketMenu, with built-in aim assist for ground-targeted spells.
+## IconTexture: Interface\AddOns\TrinketMenuPlus\Media\icon.png
 ## Author: Nelnamara
-## Version: 0.3.0
+## Version: 0.3.1
 ## Dependencies: TrinketMenu
 ## OptionalDeps: LibStub, LibDBIcon-1.0, LibDataBroker-1.1
 ## SavedVariables: TrinketMenuPlusDB

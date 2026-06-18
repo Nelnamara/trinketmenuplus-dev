@@ -1035,7 +1035,7 @@ local function buildMinimapBtn()
     local broker = LDB:NewDataObject(ADDON, {
       type  = "launcher",
       text  = "TrinketMenu Plus",
-      icon  = "Interface\\Icons\\Ability_Druid_ForceOfNature",
+      icon  = "Interface\\AddOns\\TrinketMenuPlus\\Media\\minimap.png",
       OnClick = function(_, button)
         if button == "LeftButton" then toggleConfig() end
       end,
@@ -1069,7 +1069,7 @@ local function buildMinimapBtn()
   -- Icon
   local icon = btn:CreateTexture(nil,"ARTWORK")
   icon:SetAllPoints()
-  icon:SetTexture("Interface\\Icons\\Ability_Druid_ForceOfNature")
+  icon:SetTexture("Interface\\AddOns\\TrinketMenuPlus\\Media\\minimap.png")
   icon:SetTexCoord(0.07, 0.93, 0.07, 0.93)
 
   -- Circular mask so icon clips to a circle
