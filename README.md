@@ -1,18 +1,8 @@
 # TrinketMenu Plus
 
-> **Requires:** [TrinketMenu](https://www.curseforge.com/wow/addons/trinketmenu) · **WoW:** 12.0.5 (Midnight) · **Author:** Nelnamara
+> **Requires:** [TrinketMenu](https://www.curseforge.com/wow/addons/trinketmenu) · **WoW:** 12.0.7 (Midnight) · **Author:** Nelnamara
 
 TrinketMenu Plus adds two fully configurable spell/macro action boxes alongside the TrinketMenu bar, plus a built-in aim-assist overlay for ground-targeted spells (e.g. Force of Nature, Starfall, Rain of Fire). Both boxes use `SecureActionButtonTemplate` exclusively and are fully combat-safe — no taint, no blocked actions.
-
----
-
-## Screenshots
-
-> *Replace the placeholders below with your own screenshots.*
-
-| Main Bar | Config Panel | Aim Assist |
-|:---:|:---:|:---:|
-| ![Main bar docked to TrinketMenu](docs/screenshot-bar.png) | ![Config panel](docs/screenshot-config.png) | ![Aim assist ring tracking target](docs/screenshot-aim.png) |
 
 ---
 
@@ -106,7 +96,7 @@ When a box is in **cursor mode** and all conditions are met, a pulsing glow ring
 - **Left-click** the icon to cast at cursor; the ring shows where your cursor needs to be
 - **Right-click** the icon for an instant `@target` cast if you don't want to aim
 
-> **Combat note:** Due to Midnight (12.0.5) secure frame restrictions, the clickable button freezes at its last position when you enter combat. The visual glow ring continues tracking the target freely. The button snaps back to the correct position immediately when combat ends.
+> **Combat note:** Due to Midnight (12.0.7) secure frame restrictions, the clickable button freezes at its last position when you enter combat. The visual glow ring continues tracking the target freely. The button snaps back to the correct position immediately when combat ends.
 
 ### Config Panel
 
@@ -131,6 +121,11 @@ Open with `/tmp config` or click the minimap button.
 ---
 
 ## Changelog
+
+### v0.3.1
+- Minimap button now points at the addon artwork; added AddOns-list `IconTexture`
+- Interface bumped to 120007
+- Release pipeline fixes — corrected the CurseForge/Wago secret names and project IDs (`X-Wago-ID`, `WAGO_API_TOKEN`)
 
 ### v0.3.0
 - Full architecture rewrite — boxes now use `SecureActionButtonTemplate` exclusively (removed `ActionButtonTemplate` which was overriding `OnClick` and breaking macro execution)
