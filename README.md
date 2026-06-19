@@ -26,10 +26,8 @@ TrinketMenu Plus adds two fully configurable spell/macro action boxes alongside 
 
 ## Requirements
 
-| Dependency | Required | Notes |
-|---|:---:|---|
-| [TrinketMenu](https://www.curseforge.com/wow/addons/trinketmenu) | ✅ | Core bar this addon attaches to |
-| LibDBIcon-1.0 | ❌ | Optional — minimap button integrates with MBB, Bazooka, etc. if present |
+- [TrinketMenu](https://www.curseforge.com/wow/addons/trinketmenu) *(required)* — the core bar this addon attaches to
+- LibDBIcon-1.0 *(optional)* — minimap button integrates with MBB, Bazooka, etc. if present
 
 ---
 
@@ -63,29 +61,23 @@ Alternatively, use slash commands:
 
 All commands start with `/tmp`.
 
-| Command | Description |
-|---|---|
-| `/tmp a spell "Name"` | Assign a spell to Box A |
-| `/tmp b spell "Name"` | Assign a spell to Box B |
-| `/tmp a item "Name"` | Assign an item to Box A |
-| `/tmp a macro "/cast ..."` | Assign a raw macro to Box A |
-| `/tmp a mode cursor` | Set cast mode (cursor / player / target / macro) |
-| `/tmp a clear` | Clear Box A |
-| `/tmp a config` | Open the spellbook picker for Box A |
-| `/tmp dock right` | Dock to right side of TrinketMenu (left / right / top / bottom) |
-| `/tmp config` | Open the config panel |
-| `/tmp lock` | Lock position (disables dragging) |
-| `/tmp unlock` | Unlock position |
-| `/tmp status` | Print current configuration and aim-assist debug info |
+- **`/tmp a spell "Name"`** / **`/tmp b spell "Name"`** — Assign a spell to Box A / B
+- **`/tmp a item "Name"`** — Assign an item to a box
+- **`/tmp a macro "/cast ..."`** — Assign a raw macro to a box
+- **`/tmp a mode cursor`** — Set cast mode (`cursor` / `player` / `target` / `macro`)
+- **`/tmp a clear`** — Clear a box
+- **`/tmp a config`** — Open the spellbook picker for a box
+- **`/tmp dock right`** — Dock to a side of TrinketMenu (`left` / `right` / `top` / `bottom`)
+- **`/tmp config`** — Open the config panel
+- **`/tmp lock`** / **`/tmp unlock`** — Lock/unlock position
+- **`/tmp status`** — Print current configuration and aim-assist debug info
 
 ### Cast Modes
 
-| Mode | What it does |
-|---|---|
-| `cursor` | Casts at your mouse cursor position in the world (`@cursor`) |
-| `player` | Casts centered on your character (`@player`) |
-| `target` | Casts on your current target (`@target`) |
-| `macro` | Fires a raw macro you provide via `/tmp a macro "..."` |
+- **`cursor`** — Casts at your mouse cursor position in the world (`@cursor`)
+- **`player`** — Casts centered on your character (`@player`)
+- **`target`** — Casts on your current target (`@target`)
+- **`macro`** — Fires a raw macro you provide via `/tmp a macro "..."`
 
 ### Aim Assist
 
@@ -111,12 +103,16 @@ Open with `/tmp config` or click the minimap button.
 
 ## Known Issues
 
-| Issue | Status |
-|---|---|
-| Aim button does not track target during combat | By design — Midnight secure frame restriction. Visual ring still tracks; button re-syncs on combat end. |
-| Spellbook picker may show some spells without icons briefly on first open | Cosmetic only; icons load on the second open or after a `/reload` |
-| Right-click fires `@target` even when target is out of range | No range check on the secure macro — WoW will show a "out of range" error as normal |
-| TrinketMenu itself must be visible for the dock position to calculate correctly | Log out and back in if boxes appear at 0,0 on first install |
+- **Aim button doesn't track target during combat** — by design; a Midnight secure-frame restriction. The visual ring still tracks and the button re-syncs on combat end.
+- The spellbook picker may briefly show iconless spells on first open — cosmetic; icons load on the second open or after a `/reload`.
+- Right-click fires `@target` even when the target is out of range — no range check on the secure macro; WoW shows the normal "out of range" error.
+- TrinketMenu must be visible for the dock to position correctly — log out and back in if boxes appear at 0,0 on first install.
+
+---
+
+## Compatibility / Midnight Notes
+
+Built for Midnight's secure-frame rules: the aim button syncs position via `GetCenter()` → UIParent absolute coords rather than a secure anchor chain (which would trigger `ADDON_ACTION_BLOCKED`), and re-syncs on combat exit. The cooldown overlay reads timing inside a `pcall` closure to avoid touching secret fields.
 
 ---
 
@@ -148,13 +144,28 @@ Open with `/tmp config` or click the minimap button.
 
 ## Roadmap
 
-- [ ] **Per-box glow color** — independent color setting per box instead of shared
-- [ ] **Keybind support** — register each box as a bindable action (no mouse click required)
-- [ ] **Range indicator** — tint the box icon red when the assigned spell is out of range
-- [ ] **Aim ring shape options** — circle, crosshair, or arrow variants
-- [ ] **Profiles** — save and switch named configurations (e.g. raid ST vs M+ AoE)
-- [ ] **Multi-box expansion** — optional 3rd/4th box for players with more spells to track
-- [ ] **CurseForge / Wago packaging** — automated release pipeline
+<details>
+<summary>Planned</summary>
+
+- **Per-box glow color** — independent color setting per box instead of shared
+- **Keybind support** — register each box as a bindable action (no mouse click required)
+- **Range indicator** — tint the box icon red when the assigned spell is out of range
+- **Aim ring shape options** — circle, crosshair, or arrow variants
+- **Profiles** — save and switch named configurations (e.g. raid ST vs M+ AoE)
+- **Multi-box expansion** — optional 3rd/4th box for players with more spells to track
+
+</details>
+
+---
+
+## Feature Requests
+
+<details>
+<summary>How to request</summary>
+
+Open an issue on [GitHub](https://github.com/Nelnamara/trinketmenuplus-dev/issues) or leave a CurseForge comment — include your spec and the spell/behavior you want.
+
+</details>
 
 ---
 
